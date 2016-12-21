@@ -13,6 +13,15 @@ APIClient uses [APIKit](https://github.com/ishkawa/APIKit) with [swift-protobuf]
 
 Web framework, [Kitura](http://www.kitura.io/) provides HTTP server with [swift-protobuf](https://github.com/apple/swift-protobuf) 
 
+## Requirements
+
+Swift 3.0.1  
+Xcode 8.2.1  
+protoc 3.1  
+swift-protobuf 0.9.26  
+kitura 1.3  
+APIKit 3.1.0  
+
 ## Usage
 
 ### Install protobuf
