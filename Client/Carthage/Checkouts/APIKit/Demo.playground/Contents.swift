@@ -1,5 +1,5 @@
 import PlaygroundSupport
-import Foundation
+import UIKit
 import APIKit
 
 PlaygroundPage.current.needsIndefiniteExecution = true

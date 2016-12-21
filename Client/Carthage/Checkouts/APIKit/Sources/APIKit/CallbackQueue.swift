@@ -14,7 +14,7 @@ public enum CallbackQueue {
     /// Dispatches callback closure on associated dispatch queue.
     case dispatchQueue(DispatchQueue)
 
-    public func execute(closure: @escaping () -> Void) {
+    internal func execute(closure: @escaping () -> Void) {
         switch self {
         case .main:
             DispatchQueue.main.async {
