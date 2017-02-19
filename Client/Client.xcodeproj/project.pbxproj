@@ -19,8 +19,9 @@
 		EC5B1C561E0AFFA400996368 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC5B1C511E0AFFA400996368 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EC5B1C571E0AFFA400996368 /* SwiftProtobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5B1C521E0AFFA400996368 /* SwiftProtobuf.framework */; };
 		EC5B1C581E0AFFA400996368 /* SwiftProtobuf.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC5B1C521E0AFFA400996368 /* SwiftProtobuf.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ECC410621E5A342500903A8B /* talk.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC410601E5A342500903A8B /* talk.pb.swift */; };
+		ECC410631E5A342500903A8B /* user.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC410611E5A342500903A8B /* user.pb.swift */; };
 		ECD9A3381E07525000B3B964 /* error.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD9A3361E07525000B3B964 /* error.pb.swift */; };
-		ECD9A3391E07525000B3B964 /* token.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD9A3371E07525000B3B964 /* token.pb.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,8 +53,9 @@
 		EC5B1C501E0AFFA400996368 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		EC5B1C511E0AFFA400996368 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		EC5B1C521E0AFFA400996368 /* SwiftProtobuf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftProtobuf.framework; path = Carthage/Build/iOS/SwiftProtobuf.framework; sourceTree = "<group>"; };
+		ECC410601E5A342500903A8B /* talk.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = talk.pb.swift; sourceTree = "<group>"; };
+		ECC410611E5A342500903A8B /* user.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.pb.swift; sourceTree = "<group>"; };
 		ECD9A3361E07525000B3B964 /* error.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = error.pb.swift; sourceTree = "<group>"; };
-		ECD9A3371E07525000B3B964 /* token.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = token.pb.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +106,9 @@
 				EC59DA081E0750A800A601B7 /* AppDelegate.swift */,
 				EC59DA0A1E0750A800A601B7 /* ViewController.swift */,
 				EC5B1C4E1E0AFF2600996368 /* ProtobufRequest.swift */,
+				ECC410601E5A342500903A8B /* talk.pb.swift */,
+				ECC410611E5A342500903A8B /* user.pb.swift */,
 				ECD9A3361E07525000B3B964 /* error.pb.swift */,
-				ECD9A3371E07525000B3B964 /* token.pb.swift */,
 				EC59DA0C1E0750A800A601B7 /* Main.storyboard */,
 				EC59DA0F1E0750A800A601B7 /* Assets.xcassets */,
 				EC59DA111E0750A800A601B7 /* LaunchScreen.storyboard */,
@@ -189,7 +192,8 @@
 			files = (
 				EC59DA0B1E0750A800A601B7 /* ViewController.swift in Sources */,
 				EC59DA091E0750A800A601B7 /* AppDelegate.swift in Sources */,
-				ECD9A3391E07525000B3B964 /* token.pb.swift in Sources */,
+				ECC410621E5A342500903A8B /* talk.pb.swift in Sources */,
+				ECC410631E5A342500903A8B /* user.pb.swift in Sources */,
 				EC5B1C4F1E0AFF2600996368 /* ProtobufRequest.swift in Sources */,
 				ECD9A3381E07525000B3B964 /* error.pb.swift in Sources */,
 			);

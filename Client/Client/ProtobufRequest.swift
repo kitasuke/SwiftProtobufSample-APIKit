@@ -10,8 +10,7 @@ import Foundation
 import APIKit
 import SwiftProtobuf
 
-protocol ProtobufRequest: Request {
-}
+protocol ProtobufRequest: Request {}
 
 extension ProtobufRequest {
     var baseURL: URL {
@@ -23,41 +22,46 @@ extension ProtobufRequest {
     }
 }
 
-struct GetToken: ProtobufRequest {
-    typealias Response = GetTokenResponse
+struct Talks: ProtobufRequest {
+    typealias Response = TalkResponse
     
     var method: HTTPMethod {
         return .get
     }
     
     var path: String {
-        return "/v1/token"
+        return "/v1/talks"
     }
 }
 
-struct PostToken: ProtobufRequest {
-    typealias Response = PostTokenResponse
+struct Like: ProtobufRequest {
+    typealias Response = LikeResponse
     
     var method: HTTPMethod {
         return .post
     }
     
     var path: String {
-        return "/v1/token"
+        return "/v1/like"
     }
     
     var bodyParameters: BodyParameters? {
-        var data = PostTokenRequest()
-        data.accessToken = token.accessToken
+        let data = LikeRequest.with {
+            $0.id = self.id
+        }
         
         return ProtobufBodyParameters(protobufObject: try! data.serializeProtobuf())
     }
     
-    private let token: Token
+    private let id: Int32
     
-    init(token: Token) {
-        self.token = token
+    init(id: Int32) {
+        self.id = id
     }
+}
+
+enum APIError: Error {
+    case networkError(NetworkError)
 }
 
 extension ProtobufRequest where Response: SwiftProtobuf.Message {
@@ -76,7 +80,7 @@ extension ProtobufRequest where Response: SwiftProtobuf.Message {
             }
             
             let error = try NetworkError(protobuf: data)
-            throw ResponseError.unexpectedObject(error)
+            throw APIError.networkError(error)
         }
         return object
     }
