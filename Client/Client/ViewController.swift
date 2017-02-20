@@ -21,6 +21,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        fetchTalks()
+    }
+    
+    private func fetchTalks() {
         Session.send(Talks()) { [weak self] result in
             switch result {
             case .success(let response):
@@ -50,7 +54,9 @@ class ViewController: UIViewController {
                 print(error)
                 
                 let alertController = UIAlertController(title: "Network error", message: "Make sure that your server app is running. See README for more details", preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                let action = UIAlertAction(title: "Retry", style: .default) { _ in
+                    self?.fetchTalks()
+                }
                 alertController.addAction(action)
                 self?.present(alertController, animated: true, completion: nil)
             }
